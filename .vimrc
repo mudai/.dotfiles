@@ -5,12 +5,20 @@ set autoindent
 set list
 set number
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
-map <F5> <ESC>:tabnew<CR>
-map <F6> <ESC>:tabclose<CR>
-map <F7> <ESC>:tabp<CR>
-map <F8> <ESC>:tabn<CR>
-let g:SrcExpl_RefreshTime = 1
-let g:SrcExpl_UpdateTags = 1
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+" プラグインを記述する
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/surround.vim'
+Bundle 'bbommarito/vim-slim'
+
+" Vundleの処理後、ftpluginとindentを読み込む
+filetype plugin indent on
