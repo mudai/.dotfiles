@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/takaaki/oh-my-zsh/plugins/git'
+let g:netrw_dirhist_2='/home/takaaki/oh-my-zsh/themes'
+let g:netrw_dirhist_3='/home/takaaki/oh-my-zsh'
+let g:netrw_dirhist_4='/home/takaaki/.zsh'
+let g:netrw_dirhist_5='/home/takaaki/.zsh/themes'
+let g:netrw_dirhist_6='/home/takaaki/.zsh'
+let g:netrw_dirhist_7='/home/takaaki/.zsh/themes'
