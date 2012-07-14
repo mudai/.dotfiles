@@ -19,3 +19,13 @@ Bundle 'vim-scripts/AutoComplPop'
 " Vundleの処理後、ftpluginとindentを読み込む
 filetype plugin indent on
 
+" magic comment
+function! MagicComment()
+  let magic_comment = "# -*- coding: utf-8 -*-\n"
+  let pos = getpos(".")
+  call cursor(1, 0)
+  execute ":normal i" . magic_comment
+  call setpos(".", pos)
+endfunction
+
+map <silent> <F12> :call MagicComment()<CR>

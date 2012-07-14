@@ -17,13 +17,16 @@ setopt extended_history
 setopt share_history
 setopt hist_ignore_dups
 
+#SVNのeditor設定
+EDITOR=vi
+
 # プロンプトの設定
 autoload -Uz colors
 colors
 # oh-my-zshから拝借したモジュールのロード
-for config_file (.zsh/lib/*.zsh) source $config_file
+for config_file ($HOME/.zsh/lib/*.zsh) source $config_file
 # 個人で作成したカスタムテーマの反映
-source .zsh/themes/muta_custom.zsh-theme
+source $HOME/.zsh/themes/muta_custom.zsh-theme
 
 # コマンド履歴検索の設定
 autoload history-search-end
@@ -47,6 +50,7 @@ alias -s txt=vim
 alias ls='ls -G'
 alias la='ls -la'
 alias svndiff="svn diff | colordiff | less -r"
+alias pdf=evince 
 
 # 全履歴の一覧を出力する
 function history-all {history -E 1}
@@ -60,3 +64,5 @@ function history-all {history -E 1}
 
 # rvm
 if [[ -s /home/takaaki/.rvm/scripts/rvm ]] ; then source /home/takaaki/.rvm/scripts/rvm ; fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
