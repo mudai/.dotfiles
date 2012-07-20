@@ -63,6 +63,6 @@ function history-all {history -E 1}
 #fi
 
 # rvm
-if [[ -s /home/takaaki/.rvm/scripts/rvm ]] ; then source /home/takaaki/.rvm/scripts/rvm ; fi
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
