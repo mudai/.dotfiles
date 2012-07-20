@@ -1,6 +1,9 @@
 DOT_FILES = .zshrc .zsh .vimrc .vim .screenrc
 
-all: zsh vim screen
+all: bootstrap zsh vim screen
+
+bootstrap:
+	@git submodule update --init
 
 zsh: $(foreach f, $(filter .zsh%, $(DOT_FILES)), link-dot-file-$(f))
 
