@@ -5,6 +5,7 @@ set autoindent
 set list
 set number
 syntax on
+set ambiwidth=double
 
 set nocompatible
 filetype off
@@ -13,8 +14,8 @@ call vundle#rc()
 
 " プラグインを記述する
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'bbommarito/vim-slim'
 Bundle 'vim-scripts/AutoComplPop'
+Bundle 'yanktmp.vim'
 
 " Vundleの処理後、ftpluginとindentを読み込む
 filetype plugin indent on
@@ -29,3 +30,7 @@ function! MagicComment()
 endfunction
 
 map <silent> <F12> :call MagicComment()<CR>
+
+map <silent> sy :call YanktmpYank()<CR> 
+map <silent> sp :call YanktmpPaste_p()<CR> 
+map <silent> sP :call YanktmpPaste_P()<CR> 

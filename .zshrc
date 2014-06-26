@@ -51,6 +51,7 @@ alias ls='ls -G'
 alias la='ls -la'
 alias svndiff="svn diff | colordiff | less -r"
 alias pdf=evince 
+alias jrb="java -classpath ./tmp/bsh-2.0b4.jar bsh.Interpreter"
 
 # 全履歴の一覧を出力する
 function history-all {history -E 1}
@@ -62,7 +63,6 @@ function history-all {history -E 1}
 #  screen
 #fi
 
-# rvm
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source "$HOME/.rvm/scripts/rvm"
+export rvm_project_rvmrc=1
