@@ -16,6 +16,10 @@ call vundle#rc()
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'yanktmp.vim'
+Bundle 'rails.vim'
+Bundle 'The-NERD-tree'
+" Bundle 'dbext.vim'
+Bundle 'endwise.vim'
 
 " Vundleの処理後、ftpluginとindentを読み込む
 filetype plugin indent on
