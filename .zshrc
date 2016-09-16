@@ -53,9 +53,6 @@ alias svndiff="svn diff | colordiff | less -r"
 alias pdf=evince 
 alias jrb="java -classpath ./tmp/bsh-2.0b4.jar bsh.Interpreter"
 
-# 全履歴の一覧を出力する
-function history-all {history -E 1}
-
 # screen自動生成
 #screen_max_count=8
 #screen_num=`ps aux | grep zsh | grep -v grep | wc -l`
@@ -63,6 +60,6 @@ function history-all {history -E 1}
 #  screen
 #fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source "$HOME/.rvm/scripts/rvm"
-export rvm_project_rvmrc=1
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts
