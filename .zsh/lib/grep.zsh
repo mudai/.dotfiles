@@ -2,5 +2,6 @@
 # Color grep results
 # Examples: http://rubyurl.com/ZXv
 #
-export GREP_OPTIONS='--color=auto'
+GREP_OPTIONS='--color=auto --binary-files=without-match'
+alias grep="grep $GREP_OPTIONS"
 export GREP_COLOR='1;32'

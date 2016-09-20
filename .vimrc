@@ -24,6 +24,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'Lokaltog/vim-powerline'
 
 colorscheme molokai
 
