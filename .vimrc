@@ -7,30 +7,32 @@ set number
 syntax on
 set ambiwidth=double
 
-set nocompatible
 filetype off
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
 
-" プラグインを記述する
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/AutoComplPop'
-Bundle 'yanktmp.vim'
-Bundle 'rails.vim'
-Bundle 'The-NERD-tree'
-" Bundle 'dbext.vim'
-Bundle 'endwise.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'tomasr/molokai'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'fuenor/qfixgrep'
-Bundle 'Xuyuanp/nerdtree-git-plugin'
+if &compatible
+    set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
+call dein#begin(expand('~/.vim/dein'))
+
+" " プラグインを記述する
+call dein#add('vim-ruby/vim-ruby')
+call dein#add('vim-scripts/AutoComplPop')
+call dein#add('yanktmp.vim')
+call dein#add('rails.vim')
+call dein#add('The-NERD-tree')
+call dein#add('endwise.vim')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('tomasr/molokai')
+call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('Lokaltog/vim-powerline')
+call dein#add('fuenor/qfixgrep')
+call dein#add('Xuyuanp/nerdtree-git-plugin')
+
+call dein#end()
 colorscheme molokai
-
 " vimにcoffeeファイルタイプを認識させる
 
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee

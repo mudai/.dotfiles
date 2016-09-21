@@ -22,3 +22,7 @@
 [core]
   pager = less
   editor = vi
+[http]
+	proxy = http://proxy.fiosys.co.jp:8080
+[https]
+	proxy = http://proxy.fiosys.co.jp:8080

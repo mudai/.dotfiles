@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/takaaki/dotfiles/.vim/vundle.git'
+let g:netrw_dirhist_2='/Users/mutatakaaki'
+let g:netrw_dirhist_3='/Users/mutatakaaki/.dotfiles'
+let g:netrw_dirhist_4='/Users/mutatakaaki/.dotfiles/.vim'
+let g:netrw_dirhist_5='/Users/mutatakaaki/.dotfiles/.vim/dein.vim'
+let g:netrw_dirhist_6='/Users/mutatakaaki'

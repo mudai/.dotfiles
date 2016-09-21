@@ -63,3 +63,4 @@ alias jrb="java -classpath ./tmp/bsh-2.0b4.jar bsh.Interpreter"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source $HOME/.rvm/scripts
+source $HOME/.bashrc
