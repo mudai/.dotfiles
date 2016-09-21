@@ -70,13 +70,13 @@ let g:indent_guides_enable_on_vim_startup=1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "Modified",
-    \ "Staged"    : "Staged",
-    \ "Untracked" : "Untracked",
-    \ "Renamed"   : "Renamed",
-    \ "Unmerged"  : "Unmerged",
-    \ "Deleted"   : "Deleted",
-    \ "Dirty"     : "Dirty",
-    \ "Clean"     : "Clean",
-    \ "Unknown"   : "Unknown"
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
     \ }
