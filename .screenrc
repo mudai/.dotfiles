@@ -1,8 +1,15 @@
+defbce on
 defencoding uft8
 escape ^Zz
 activity "Activity in window %."
-scrollback 4000
+scrollback 40000
 startup_message off
 hardstatus alwayslastline "|%c %m/%d | %w"
-shell zsh
+shell $SHELL
 vbell off
+term "screen-256color"
+termcapinfo xterm-256color hs@:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l\E[?1;4;6l
+screen 0
+screen 1
+screen 2
+screen 3

@@ -6,57 +6,66 @@ set list
 set number
 syntax on
 set ambiwidth=double
+set mouse=a
+set ttymouse=xterm2
+set clipboard+=unnamed
 
 filetype off
 
 if &compatible
     set nocompatible
 endif
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('~/.vim/dein'))
+if dein#load_state('~/.cache/dein')
+  " " プラグインを記述する
+  call dein#begin('~/.cache/dein')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
-" " プラグインを記述する
-call dein#add('vim-ruby/vim-ruby')
-call dein#add('vim-scripts/AutoComplPop')
-call dein#add('yanktmp.vim')
-call dein#add('rails.vim')
-call dein#add('The-NERD-tree')
-call dein#add('endwise.vim')
-call dein#add('kchmck/vim-coffee-script')
-call dein#add('nathanaelkane/vim-indent-guides')
-call dein#add('tomasr/molokai')
-call dein#add('bronson/vim-trailing-whitespace')
-call dein#add('Lokaltog/vim-powerline')
-call dein#add('fuenor/qfixgrep')
-call dein#add('Xuyuanp/nerdtree-git-plugin')
+  call dein#add('vim-ruby/vim-ruby')
+  call dein#add('vim-scripts/AutoComplPop')
+  call dein#add('vim-scripts/yanktmp.vim')
+  call dein#add('vim-scripts/rails.vim')
+  call dein#add('vim-scripts/The-NERD-tree')
+  call dein#add('vim-scripts/endwise.vim')
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('tomasr/molokai')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('Lokaltog/vim-powerline')
+  call dein#add('fuenor/qfixgrep')
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
+  call dein#add('fatih/vim-go')
+  call dein#add('chr4/nginx.vim') " nginxシンタックスハイライト
+  call dein#end()
+  call dein#save_state()
+endif
 
-call dein#end()
+filetype plugin indent on
+syntax enable
+
 colorscheme molokai
 " vimにcoffeeファイルタイプを認識させる
 
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-" インデント設定
-autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
-" オートコンパイル
-  "保存と同時にコンパイルする
-autocmd BufWritePost *.coffee silent make! 
-  "エラーがあったら別ウィンドウで表示
-autocmd QuickFixCmdPost * nested cwindow | redraw! 
-" Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
-nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
+" au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" " インデント設定
+" autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
+" " オートコンパイル
+"   "保存と同時にコンパイルする
+" autocmd BufWritePost *.coffee silent make! 
+"   "エラーがあったら別ウィンドウで表示
+" autocmd QuickFixCmdPost * nested cwindow | redraw! 
+" " Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
+" nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
 
 " Vundleの処理後、ftpluginとindentを読み込む
-filetype plugin indent on
+" filetype plugin indent on
 
-" magic comment
-function! MagicComment()
-  let magic_comment = "# -*- coding: utf-8 -*-\n"
-  let pos = getpos(".")
-  call cursor(1, 0)
-  execute ":normal i" . magic_comment
-  call setpos(".", pos)
-endfunction
 
 map <silent> <F12> :call MagicComment()<CR>
 
